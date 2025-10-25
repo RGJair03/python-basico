@@ -63,8 +63,8 @@ print(
 # 7 - Preguntar formato de guardado en bucle
 while True:
     print("\n¿En qué formato deseas guardar los resultados?")
-    print("\n === Indica el numero deseado ===")
-    print("\nOpciones: 1 = CSV (.csv) | 2 = Excel (.xlsx)")
+    print("\n === Indica el número deseado ===")
+    print("\nOpciones: 1 = CSV (.csv) | 2 = Excel (.xlsx) | 3 = XML (.xml)")
 
     opcion = input("Ingresa tu elección: ")
 
@@ -78,6 +78,11 @@ while True:
             "resultados_examen.xlsx", sheet_name="Hoja 1", index=False
         )
         print("Resultados guardados en 'resultados_examen.xlsx'")
+        break
+
+    elif opcion == "3":
+        df_estudiantes.to_xml("resultados_examen.xml", index=False)
+        print("Resultados guardados en 'resultados_examen.xml'")
         break
 
     else:
